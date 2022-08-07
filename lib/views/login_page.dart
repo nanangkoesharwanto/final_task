@@ -1,4 +1,5 @@
 import 'package:final_task/constants/r.dart';
+import 'package:final_task/views/register_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -13,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: R.colors.gray,
+        backgroundColor: const Color(0xffF3F7F8),
         body: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 32,
@@ -36,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Image.asset(R.assets.imgLogin),
               const SizedBox(
-                height: 30,
+                height: 25,
               ),
               Text(
                 R.strings.welcome,
@@ -54,8 +55,20 @@ class _LoginPageState extends State<LoginPage> {
                   color: R.colors.graySubtitle,
                 ),
               ),
+              Text(
+                R.strings.loginDesc2,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: R.colors.graySubtitle,
+                ),
+              ),
               const Spacer(),
               ButtonLogin(
+                onTap: () {
+                  Navigator.of(context).pushNamed(RegisterPage.route);
+                },
                 backgroundColor: Colors.white,
                 borderColor: R.colors.primary,
                 child: Row(
@@ -68,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       R.strings.loginWithGoogle,
                       style: TextStyle(
-                        fontSize: 17,
+                        fontSize: 15,
                         fontWeight: FontWeight.w500,
                         color: R.colors.blackLogin,
                       ),
@@ -77,6 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               ButtonLogin(
+                onTap: () {},
                 backgroundColor: Colors.black,
                 borderColor: Colors.black,
                 child: Row(
@@ -89,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       R.strings.loginWithApple,
                       style: const TextStyle(
-                        fontSize: 17,
+                        fontSize: 15,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
@@ -109,11 +123,13 @@ class ButtonLogin extends StatelessWidget {
     required this.backgroundColor,
     required this.child,
     required this.borderColor,
+    required this.onTap,
   }) : super(key: key);
 
   final Color backgroundColor;
   final Widget child;
   final Color borderColor;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -132,7 +148,7 @@ class ButtonLogin extends StatelessWidget {
             side: BorderSide(color: borderColor),
           ),
         ),
-        onPressed: () {},
+        onPressed: onTap,
         child: child,
       ),
     );

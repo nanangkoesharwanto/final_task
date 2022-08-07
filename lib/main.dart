@@ -1,6 +1,9 @@
 import 'package:final_task/views/login_page.dart';
+import 'package:final_task/views/main_page.dart';
+import 'package:final_task/views/register_page.dart';
 import 'package:final_task/views/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme(),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -30,7 +34,9 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => const SplashScreen(),
-        LoginPage.route: (context) => const LoginPage()
+        LoginPage.route: (context) => const LoginPage(),
+        RegisterPage.route: (context) => const RegisterPage(),
+        MainPage.route: (context) => const MainPage(),
       },
     );
   }
