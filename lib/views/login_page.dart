@@ -22,6 +22,9 @@ class _LoginPageState extends State<LoginPage> {
           ),
           child: Column(
             children: [
+              const SizedBox(
+                height: 15,
+              ),
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
@@ -35,7 +38,10 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 20,
               ),
-              Image.asset(R.assets.imgLogin),
+              Image.asset(
+                R.assets.imgLogin,
+                height: 275,
+              ),
               const SizedBox(
                 height: 25,
               ),
