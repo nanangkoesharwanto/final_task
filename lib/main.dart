@@ -1,4 +1,5 @@
 import 'package:final_task/views/login_page.dart';
+import 'package:final_task/views/main/latihan_soal/mapel_page.dart';
 import 'package:final_task/views/main_page.dart';
 import 'package:final_task/views/register_page.dart';
 import 'package:final_task/views/splash_screen.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         LoginPage.route: (context) => const LoginPage(),
         RegisterPage.route: (context) => const RegisterPage(),
         MainPage.route: (context) => const MainPage(),
+        MapelPage.route: (context) => const MapelPage(),
       },
     );
   }

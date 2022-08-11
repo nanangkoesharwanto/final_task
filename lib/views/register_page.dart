@@ -35,22 +35,25 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF0F3F5),
-      appBar: AppBar(
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(25),
-          bottomRight: Radius.circular(25),
-        )),
-        // remove shadow
-        elevation: 0,
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.black),
-        title: const Text(
-          "Yuk isi data diri.",
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w700,
-            fontSize: 18,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight + 20),
+        child: AppBar(
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(25),
+            bottomRight: Radius.circular(25),
+          )),
+          // remove shadow
+          elevation: 0,
+          backgroundColor: Colors.white,
+          iconTheme: const IconThemeData(color: Colors.black),
+          title: const Text(
+            "Yuk isi data diri.",
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w700,
+              fontSize: 18,
+            ),
           ),
         ),
       ),

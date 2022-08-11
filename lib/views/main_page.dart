@@ -20,9 +20,14 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Image.asset(
-          R.assets.icDiscuss,
-          width: 31,
+        child: Container(
+          padding: const EdgeInsets.only(
+            top: 12,
+          ),
+          child: Image.asset(
+            R.assets.icDiscuss,
+            width: 31,
+          ),
         ),
         onPressed: () {
           Navigator.of(context).push(
@@ -69,7 +74,7 @@ class _MainPageState extends State<MainPage> {
                         _pc.animateToPage(
                           index,
                           duration: const Duration(milliseconds: 500),
-                          curve: Curves.bounceInOut,
+                          curve: Curves.easeInOut,
                         );
                         setState(() {});
                       },
