@@ -1,4 +1,5 @@
 import 'package:final_task/views/main/latihan_soal/home_page.dart';
+import 'package:final_task/views/main/latihan_soal/paket_soal_page.dart';
 import 'package:flutter/material.dart';
 
 class MapelPage extends StatefulWidget {
@@ -16,14 +17,19 @@ class _MapelPageState extends State<MapelPage> {
       appBar: AppBar(
         title: const Text("Pilih Pelajaran"),
       ),
-      body: ListView.builder(
-          itemCount: 15,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {},
-              child: const MapelWidget(),
-            );
-          }),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+        child: ListView.builder(
+            itemCount: 15,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(PaketSoalPage.route);
+                },
+                child: const MapelWidget(),
+              );
+            }),
+      ),
     );
   }
 }

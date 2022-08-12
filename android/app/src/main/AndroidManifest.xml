@@ -28,7 +28,7 @@
         <!--#enddocregion android-queries-->
 
    <application
-        android:label="final_task"
+        android:label="Latihan Soal"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

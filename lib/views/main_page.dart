@@ -126,7 +126,7 @@ class _MainPageState extends State<MainPage> {
                         children: [
                           Image.asset(
                             R.assets.icProfile,
-                            height: 21,
+                            height: 25,
                           ),
                           const Text("Profile"),
                         ],
